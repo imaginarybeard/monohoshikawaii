@@ -12,7 +12,7 @@ var aiueo = [
 ]
 
 var diff_numbers = []
-var chars = []
+var column_root_chars = []
 
 var root_middle_row_element = $('<div class="middle_row"><button class="btn btn-danger diff_button delete_row"><div class="delete_mark">x</div> <div class="value">1</div></button></div>')
 var user_middle_row_element = $('<div class="middle_row"><div></div></div>')
@@ -40,6 +40,8 @@ var update_diff_numbers = ()=>{
   for(var i=0; i<elements.length; i++){
     diff_numbers.push(Number($(elements[i]).find(".value").text()))
   }
+
+  save_cookie()
 }
 
 var update_diff_chars_columns = ()=>{
@@ -59,10 +61,18 @@ var update_diff_chars = (target)=>{
   for(var i=0; i<update_chars.length; i++){
     var new_element = user_middle_row_element.clone()
     new_element.find("div").text(update_chars[i])
-    // new_element.text("て")
-    console.log(new_element)
     $(target).append(new_element)
   }
+}
+
+var update_column_root_chars = ()=>{
+  column_root_chars = []
+  var user_columns = $("#user_columns").find(".user_column")
+  for(var i=0; i<user_columns.length; i++){
+    column_root_chars.push($(user_columns[i]).find(".second_row div").text())
+  }
+
+  save_cookie()
 }
 
 var calc_diff = (base, diff)=>{
@@ -77,12 +87,12 @@ var calc_diff = (base, diff)=>{
   return aiueo[next]
 }
 
-var add_user_column = ()=>{
-  var base_char = $("#addition_char_select").val()
+var add_user_column = (base_char)=>{
   var new_column = user_column.clone()
   new_column.find(".second_row div").text(base_char)
   $("#user_columns").append(new_column)
 }
+
 
 var push_add_diff_number_button = ()=>{
   var number = check_diff_number()
@@ -94,11 +104,69 @@ var push_add_diff_number_button = ()=>{
 }
 
 var push_add_column_button = ()=>{
-  add_user_column()
+  add_user_column($("#addition_char_select").val())
   update_diff_chars_columns()
+  update_column_root_chars()
+}
+
+var save_cookie = ()=>{
+  document.cookie = "diffnumbers" + '=' + encodeURIComponent(diff_numbers);
+  document.cookie = "columnrootchars" + '=' + encodeURIComponent(column_root_chars)
+}
+
+var load_cookie = ()=>{
+  var result = {};
+  var cookies = document.cookie;
+
+  if(cookies != ''){
+   var cookieArray = cookies.split(';');
+   for(var i = 0; i < cookieArray.length; i++){
+    var cookie = cookieArray[i].split('=');
+    result[cookie[0]] = decodeURIComponent(cookie[1]);
+   }
+  }
+
+  
+  if(result[" diffnumbers"]){
+    diff_numbers = result[" diffnumbers"].split(",")
+  }
+
+  if(result[" columnrootchars"]){
+    column_root_chars = result[" columnrootchars"].split(",")
+  }
+}
+
+var delete_cookie = ()=>{
+  document.cookie = "diffnumbers" + '='
+  document.cookie = "columnrootchars" + '='
+}
+
+var delete_value = ()=>{
+  var diff_numbers = []
+  var column_root_chars = []
+
+  var diff_number_eles = $("#root_column").find(".middle_row")
+  var user_columns = $("#user_columns").find(".user_column")
+
+  diff_number_eles.remove()
+  user_columns.remove()
+}
+
+var set_cookie_value = ()=>{
+  for(var i=0; i<diff_numbers.length; i++){
+    add_diff_number(diff_numbers[i])
+  }
+  for(var i=0; i<column_root_chars.length; i++){
+    add_user_column(column_root_chars[i])
+  }
+
 }
 
 $(document).ready(function(){
+  load_cookie()
+  set_cookie_value()
+  update_diff_chars_columns()
+
   $('#add_row').on('click', function(){
     push_add_diff_number_button()
   })
@@ -129,5 +197,11 @@ $(document).ready(function(){
 
   $('#user_columns').on('click', ".delete_column", function(){
     $(this).parent().parent().remove()
+    update_column_root_chars()
+  })
+
+  $("body").on("click", "#reset_button", function(){
+    delete_cookie()
+    delete_value()
   })
 })
