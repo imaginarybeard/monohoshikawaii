@@ -112,6 +112,9 @@ var push_add_column_button = ()=>{
 var save_cookie = ()=>{
   document.cookie = "diffnumbers" + '=' + encodeURIComponent(diff_numbers);
   document.cookie = "columnrootchars" + '=' + encodeURIComponent(column_root_chars)
+
+  console.log(document.cookie)
+  
 }
 
 var load_cookie = ()=>{
@@ -126,7 +129,8 @@ var load_cookie = ()=>{
    }
   }
 
-  
+  console.log(result)
+
   if(result[" diffnumbers"]){
     diff_numbers = result[" diffnumbers"].split(",")
   }
@@ -159,7 +163,6 @@ var set_cookie_value = ()=>{
   for(var i=0; i<column_root_chars.length; i++){
     add_user_column(column_root_chars[i])
   }
-
 }
 
 $(document).ready(function(){
