@@ -136,6 +136,8 @@ var load_cookie = ()=>{
     column_root_chars = result[" columnrootchars"].split(",")
   }
 
+  console.log(result)
+
   console.log(diff_numbers)
   console.log(column_root_chars)
 
