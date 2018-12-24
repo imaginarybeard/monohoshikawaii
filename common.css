@@ -1,0 +1,138 @@
+#header {
+  position: relative;
+  height: 40px;
+  width: 100%;
+  background-color: #222222; }
+  #header .title {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: white;
+    font-size: 20px; }
+  #header .link {
+    position: absolute;
+    top: 7px;
+    right: 5px; }
+
+.first_row {
+  display: inline-block;
+  position: relative;
+  width: 22px;
+  margin-left: 10px; }
+
+.second_row {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  margin-left: 10px; }
+  .second_row div {
+    margin-left: 8px; }
+
+.middle_row {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: 40px;
+  margin-top: 0;
+  margin-left: 10px; }
+
+.user_column {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden; }
+  .user_column .middle_row div {
+    margin-top: 3px;
+    margin-left: 8px; }
+
+.last_row {
+  right: 0px;
+  top: 0px;
+  position: absolute;
+  display: inline-block;
+  width: 90px;
+  margin-left: 10px; }
+
+#root_column {
+  position: relative;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+  height: 30px;
+  margin-top: 10px; }
+  #root_column .second_row {
+    margin-top: 6px; }
+
+.user_column {
+  height: 38px;
+  margin-top: 10px; }
+
+#addition_column {
+  height: 38px;
+  width: 100%;
+  margin-top: 10px; }
+
+#addtion_button_wrapper {
+  width: 100%;
+  height: 100%; }
+
+#addition_button {
+  margin: 5px; }
+
+.btn {
+  width: 100%; }
+
+.diff_button {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  padding: 0; }
+  .diff_button .delete_mark {
+    opacity: 0.7;
+    position: absolute;
+    left: 4px;
+    top: -4px; }
+  .diff_button .value {
+    font-size: 12px;
+    opacity: 0.9;
+    position: absolute;
+    right: 4px;
+    top: 1px; }
+
+.round_button {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  padding: 0; }
+  .round_button .round_mark {
+    opacity: 0.9;
+    position: absolute;
+    left: 4px;
+    top: -4px; }
+
+.delete_button .round_mark {
+  left: 5px; }
+
+.input_number {
+  display: inline-block;
+  width: 40px;
+  height: 30px;
+  opacity: 0.5; }
+
+.input_number_button {
+  margin-left: 3px; }
+
+hr {
+  margin-top: 8px;
+  margin-bottom: 8px; }
+
+.hide_lv1 {
+  opacity: 0.5; }
+
+.hide_lvmax {
+  opacity: 0.03; }
+
+/*# sourceMappingURL=common.css.map */
