@@ -26,6 +26,8 @@
   width: 70px;
   margin-left: 10px; }
   .second_row div {
+    font-size: 22px;
+    font-weight: bold;
     margin-left: 8px; }
 
 .middle_row {
@@ -41,7 +43,8 @@
   overflow-x: scroll;
   overflow-y: hidden; }
   .user_column .middle_row div {
-    margin-top: 3px;
+    font-size: 22px;
+    font-weight: bold;
     margin-left: 8px; }
 
 .last_row {
@@ -57,10 +60,10 @@
   overflow-x: scroll;
   overflow-y: hidden;
   width: 100%;
-  height: 30px;
+  height: 32px;
   margin-top: 10px; }
   #root_column .second_row {
-    margin-top: 6px; }
+    margin-top: 4px; }
 
 .user_column {
   height: 38px;
@@ -85,36 +88,38 @@
   position: relative;
   display: inline-block;
   width: 40px;
-  height: 20px;
-  border-radius: 10px;
+  height: 26px;
+  border-radius: 16px;
   padding: 0; }
   .diff_button .delete_mark {
     opacity: 0.7;
     position: absolute;
     left: 4px;
-    top: -4px; }
+    top: -1px; }
   .diff_button .value {
     font-size: 12px;
     opacity: 0.9;
     position: absolute;
     right: 4px;
-    top: 1px; }
+    top: 4px; }
 
 .round_button {
   position: relative;
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
   padding: 0; }
   .round_button .round_mark {
     opacity: 0.9;
     position: absolute;
-    left: 4px;
-    top: -4px; }
+    font-size: 20px;
+    left: 7px;
+    top: -3px; }
 
 .delete_button .round_mark {
-  left: 5px; }
+  top: -4px;
+  left: 8px; }
 
 .input_number {
   display: inline-block;
