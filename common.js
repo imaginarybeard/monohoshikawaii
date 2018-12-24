@@ -124,16 +124,16 @@ var load_cookie = ()=>{
    var cookieArray = cookies.split(';');
    for(var i = 0; i < cookieArray.length; i++){
     var cookie = cookieArray[i].split('=');
-    result[cookie[0]] = decodeURIComponent(cookie[1]);
+    result[cookie[0].trim()] = decodeURIComponent(cookie[1]);
    }
   }
 
-  if(result[" diffnumbers"]){
-    diff_numbers = result[" diffnumbers"].split(",")
+  if(result["diffnumbers"]){
+    diff_numbers = result["diffnumbers"].split(",")
   }
 
-  if(result[" columnrootchars"]){
-    column_root_chars = result[" columnrootchars"].split(",")
+  if(result["columnrootchars"]){
+    column_root_chars = result["columnrootchars"].split(",")
   }
 
   console.log(result)
