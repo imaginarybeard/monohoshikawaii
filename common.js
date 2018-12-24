@@ -114,7 +114,6 @@ var save_cookie = ()=>{
   document.cookie = "columnrootchars" + '=' + encodeURIComponent(column_root_chars)
 
   console.log(document.cookie)
-  
 }
 
 var load_cookie = ()=>{
@@ -129,8 +128,6 @@ var load_cookie = ()=>{
    }
   }
 
-  console.log(result)
-
   if(result[" diffnumbers"]){
     diff_numbers = result[" diffnumbers"].split(",")
   }
@@ -138,6 +135,12 @@ var load_cookie = ()=>{
   if(result[" columnrootchars"]){
     column_root_chars = result[" columnrootchars"].split(",")
   }
+
+  console.log(diff_numbers)
+  console.log(column_root_chars)
+
+  set_cookie_value()
+  update_diff_chars_columns()
 }
 
 var delete_cookie = ()=>{
@@ -167,8 +170,6 @@ var set_cookie_value = ()=>{
 
 $(document).ready(function(){
   load_cookie()
-  set_cookie_value()
-  update_diff_chars_columns()
 
   $('#add_row').on('click', function(){
     push_add_diff_number_button()
