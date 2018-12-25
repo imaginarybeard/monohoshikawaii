@@ -110,6 +110,7 @@ var push_add_column_button = ()=>{
 }
 
 var save_cookie = ()=>{
+  document.cookie = "max-age=31536000" 
   document.cookie = "diffnumbers" + '=' + encodeURIComponent(diff_numbers);
   document.cookie = "columnrootchars" + '=' + encodeURIComponent(column_root_chars)
 
