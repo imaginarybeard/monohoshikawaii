@@ -110,7 +110,6 @@ var push_add_column_button = ()=>{
 }
 
 var save_cookie = ()=>{
-  /*何か適当にコミットすると通るらしい？*/
   document.cookie = "max-age=31536000"
   document.cookie = "diffnumbers" + '=' + encodeURIComponent(diff_numbers);
   document.cookie = "columnrootchars" + '=' + encodeURIComponent(column_root_chars)
@@ -201,6 +200,10 @@ $(document).ready(function(){
       push_add_column_button()
       return false;
     }
+  });
+
+  $("#addition_char_select").change(function() {
+    push_add_column_button()
   });
 
   $('#user_columns').on('click', ".delete_column", function(){
