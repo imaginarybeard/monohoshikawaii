@@ -39,6 +39,7 @@ var change_enemy = (enemy_diffs)=>{
   }
   update_diff_numbers()
   update_diff_chars_columns()
+  update_column_root_chars()
 }
 
 var generate_select_options = ()=>{
