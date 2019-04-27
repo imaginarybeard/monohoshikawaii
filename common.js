@@ -37,6 +37,8 @@ var change_enemy = (enemy_diffs)=>{
       add_diff_number(Number(diffs_list[i]))
     }
   }
+  update_diff_numbers()
+  update_diff_chars_columns()
 }
 
 var generate_select_options = ()=>{
