@@ -251,6 +251,7 @@ $(document).ready(function(){
 
   $("#enemy_select").change(function() {
     change_enemy($(this).val())
+    $('body, html').scrollTop(0);
   });
 
   $('#user_columns').on('click', ".delete_column", function(){
