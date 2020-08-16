@@ -13,6 +13,7 @@ var aiueo = [
 
 // 
 var enemy_params = [
+  ["ウンディーヴァ", "+18", "18"], 
   ["プラチナーガ", "左+3右+2", "3:2"],
   ["ハイアシンス", "+4", "4"],
   ["ゴシェナイト", "+2", "2"],
@@ -23,7 +24,7 @@ var enemy_params = [
   ["エヴァ１３号機", "+8", "8"],
   ["クリソベリル", "+4", "4"],
   ["シャドウ", "-6", "-6"],
-  ["ツァボライト", "+26", "+26"],
+  ["ツァボライト", "+26", "26"],
 ]
 
 var diff_numbers = []
@@ -216,6 +217,7 @@ var set_cookie_value = ()=>{
     add_user_column(column_root_chars[i])
   }
 }
+
 
 $(document).ready(function(){
   load_cookie()
